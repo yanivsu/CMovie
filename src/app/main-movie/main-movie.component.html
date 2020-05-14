@@ -1,0 +1,13 @@
+<div fxHide.lt-sm>
+  <div id="selectedMovie" style="position: relative" >
+   <img *ngIf="movie" src="{{ imageLink + movie.smallImage }}" alt="Main Image">
+   <app-movie-info  *ngIf="movie" [selectedMovie]="movie"></app-movie-info>
+  </div>
+</div>
+<div fxHide.gt-sm>
+  <div id="phoneSelectedMovie" style="position: relative" fxFlex="100" fxLayout="column">
+    <img  *ngIf="movie" src="{{ imageLink + movie.posterImage }}" alt="Main Image">
+    <app-movie-info  *ngIf="movie" [selectedMovie]="movie"></app-movie-info>
+  </div>
+</div>
+

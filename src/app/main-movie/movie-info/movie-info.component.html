@@ -1,0 +1,77 @@
+<div fxHide.lt-sm>
+    <mat-card *ngIf="showInfo" fxFlex="33" >
+    <mat-card-title>{{ selectedMovie.name }}</mat-card-title>
+    <mat-card-content>{{ selectedMovie.description }}</mat-card-content>
+    <mat-card-subtitle>
+      <mat-icon style="color: #FDCC0D">star</mat-icon> <span style="font-size: 1.2em; margin-left: 5px">{{ selectedMovie.rating }}</span>
+      <button style="margin-left: 5px" mat-button (click)="showInfo = !showInfo">More info</button>
+    </mat-card-subtitle>
+  </mat-card>
+  <div [ngStyle]="{ 'display': showInfo ? 'none' : 'block' } " fxLayout="row wrap" class="infoCard" fxLayoutAlign="center">
+    <mat-card fxFlex="100" >
+      <div fxLayout="column" fxFlex="25" fxLayoutAlign="space-around" >
+       <img id="posterImg" fxFlex="80" src="{{ imageLink + selectedMovie.posterImage }}" alt='infoImage(Poster)'>
+        <button class="goBackButton" mat-button (click)="showInfo = !showInfo">	<mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+      </div>
+      <div fxFlex="75" fxLayout="column">
+        <mat-card-title style="text-decoration: underline">{{ selectedMovie.name }} ({{selectedMovie.date.slice(0, 4)}})</mat-card-title>
+          <mat-card-content style="text-align: start; margin-left: 20px">{{ selectedMovie.description }}</mat-card-content>
+        <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between">
+          <mat-card-subtitle  fxLayout="column" fxLayoutAlign="center start" style="margin-left: 20px" fxFlex="25">
+            <p>Release Date : {{ selectedMovie.date | date }} </p>
+            <p>Budget: {{ selectedMovie.budget  | currency:'USD' : 'symbol' : '1.0-0'}}</p>
+            <p>Income: {{ selectedMovie.income  | currency:'USD' :  'symbol' : '1.0-0' }}</p>
+            <p>Profit: {{ selectedMovie.income - selectedMovie.budget  | currency:'USD' :  'symbol' : '1.0-0'}}</p>
+            <p>Rating: {{ selectedMovie.rating }}</p>
+          </mat-card-subtitle>
+          <youtube-player
+            fxFlex="75"
+            videoId="{{ selectedMovie.youtube }}"
+            height="100%"
+            width="100%"
+          >
+          </youtube-player>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+
+
+<div class="phoneInfo" fxHide.gt-sm fxLayoutAlign="center">
+  <mat-card *ngIf="showInfo" fxFlex="100">
+    <mat-card-title >{{ selectedMovie.name }}</mat-card-title>
+    <mat-card-content>{{ selectedMovie.description }}</mat-card-content>
+    <mat-card-subtitle fxLayoutAlign="space-between">
+      <div>
+       <mat-icon style="color: #FDCC0D">star</mat-icon> <span style="font-size: 1.2em; margin-left: 5px">{{ selectedMovie.rating }}</span>
+      </div>
+      <div>
+        <button style="margin-left: 5px" mat-button (click)="showInfo = !showInfo">More info</button>
+      </div>
+    </mat-card-subtitle>
+  </mat-card>
+  <div *ngIf="!showInfo">
+    <mat-card fxFlex="100" fxLayout="column">
+      <mat-card-title style="font-size: 18px"> <button class="goBackButton" mat-button (click)="showInfo = !showInfo"><mat-icon>keyboard_arrow_down</mat-icon></button>
+        {{ selectedMovie.name }}</mat-card-title>
+      <mat-card-content   style="font-size: 12px">{{ selectedMovie.description }}</mat-card-content>
+      <mat-card-subtitle  style="font-size: 12px" fxLayout="column" fxLayoutAlign="space-between" fxFlex="25">
+        <p>Release Date : {{ selectedMovie.date | date }} </p>
+        <p>Budget: {{ selectedMovie.budget  | currency:'USD' : 'symbol' : '1.0-0'}}</p>
+        <p>Income: {{ selectedMovie.income  | currency:'USD' :  'symbol' : '1.0-0' }}</p>
+        <p>Profit: {{ selectedMovie.income - selectedMovie.budget  | currency:'USD' :  'symbol' : '1.0-0'}}</p>
+        <p>Rating: {{ selectedMovie.rating }}</p>
+        <youtube-player
+          fxFlex="75"
+          videoId="{{ selectedMovie.youtube }}"
+          height="100%"
+          width="100%"
+        >
+        </youtube-player>
+      </mat-card-subtitle>
+    </mat-card>
+  </div>
+</div>

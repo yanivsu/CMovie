@@ -1,0 +1,8 @@
+<div  fxLayout="row wrap" fxLayoutAlign="center center">
+  <div *ngFor="let movie of topMovies">
+    <app-movie [movie]="movie" (click)="selectedMovie(movie)"></app-movie>
+  </div>
+</div>
+<div fxLayoutAlign="center">
+  <button class="loadMore" mat-raised-button (click)="loadMore()">Load More...</button>
+</div>

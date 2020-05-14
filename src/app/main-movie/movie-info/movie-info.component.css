@@ -1,0 +1,107 @@
+mat-card-title {
+  text-align: center;
+  color: white;
+}
+
+mat-card-content {
+  color: white;
+  text-align: center;
+}
+
+mat-card-subtitle {
+  color: #FDCC0D;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+}
+
+mat-card {
+  position: absolute;
+  bottom: 15%;
+  left: 12%;
+  color: whitesmoke;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.infoCard mat-card{
+  top: 20% ;
+  left: 15% ;
+  right: 0 ;
+  width: 70%;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+  animation: fadeIn 1s linear ;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+.goBackButton {
+  opacity: 50%;
+  background-color: #3e3838;
+}
+
+
+
+
+
+
+/* Phone CSS */
+
+
+mat-card-title {
+  text-align: center;
+  color: white;
+}
+
+.phoneInfo mat-card-content {
+  color: white;
+  text-align: start;
+}
+
+mat-card-subtitle {
+  color: #FDCC0D;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.phoneInfo mat-card {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: whitesmoke;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.phoneInfo .infoCard mat-card{
+  top: 20% ;
+  left: 15% ;
+  right: 0 ;
+  width: 70%;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+  animation: fadeIn 1s linear ;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+.goBackButton {
+  opacity: 50%;
+  background-color: #3e3838;
+}
+.phoneInfo .goBackButton {
+  opacity: 80%;
+  background-color: #3e3838;
+}

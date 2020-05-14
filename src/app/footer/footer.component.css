@@ -1,0 +1,11 @@
+.footer {
+  height: 40px;
+  width: 100%;
+  background-color: #FDCC0D;
+  position: relative;
+  text-align: center;
+  color: #FFFFFF;
+  bottom: 0;
+  font-size: 24px;
+  font-family: 'Varela', sans-serif
+}

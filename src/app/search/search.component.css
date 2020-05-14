@@ -1,0 +1,33 @@
+mat-toolbar {
+  background-color: #2D294E;
+  color: #F9F9FA;
+  font-family: 'Varela', sans-serif;
+  width: 100%;
+}
+:host ::ng-deep input::-webkit-input-placeholder {
+  color: white;
+  font-family: 'Varela', sans-serif;
+  font-size: 14px;
+
+}
+input {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #FDCC0D;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-image: url("https://img.icons8.com/color/24/000000/search.png");
+  background-position: 90%;
+  background-repeat: no-repeat;
+  color: #F9F9FA;
+  background-color: black;
+}
+
+
+
+mat-icon {
+  color: #F9F9FA;
+
+}
